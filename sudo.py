@@ -109,8 +109,7 @@ increased.
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         add_help=True,
-        description='* Sudo Privilege Escalation / Heap Overflow -
-CVE-2021-3156 *'
+        description='* Sudo Privilege Escalation / Heap Overflow -CVE-2021-3156 *'
     )
     try:
         parser.add_argument('-source', action='store', help='Path to
