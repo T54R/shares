@@ -112,12 +112,9 @@ if __name__ == '__main__':
         description='* Sudo Privilege Escalation / Heap Overflow -CVE-2021-3156 *'
     )
     try:
-        parser.add_argument('-source', action='store', help='Path to
-malicious "passwd" file to overwrite the target')
-        parser.add_argument('-target', action='store', help='Target
-file path to be overwritten (default: /etc/passwd)')
-        parser.add_argument('-sleep', action='store', help='Sleep
-setting for forked processes (default: 0.01 seconds')
+        parser.add_argument('-source', action='store', help='Path to malicious "passwd" file to overwrite the target')
+        parser.add_argument('-target', action='store', help='Target file path to be overwritten (default: /etc/passwd)')
+        parser.add_argument('-sleep', action='store', help='Sleep setting for forked processes (default: 0.01 seconds')
         parser.set_defaults(target='/etc/passwd', sleep='0.01')
 
         options = parser.parse_args()
