@@ -1,4 +1,3 @@
-<?php
 
 function featureShell($cmd, $cwd) {
     $stdout = array();
@@ -102,7 +101,7 @@ if (isset($_GET["feature"])) {
     die();
 }
 
-?><!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 
