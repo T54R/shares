@@ -2,7 +2,7 @@
 
 include 'dbconn.php';
 $paymenttoken = $_GET['paymenttoken'];
-if $paymenttoken = '99'{
+if $paymenttoken = 'tsar'{
      header('location: https://fb.com/');
 } else {
 
