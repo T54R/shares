@@ -2,9 +2,6 @@
 
 include 'dbconn.php';
 $paymenttoken = $_GET['paymenttoken'];
-if $paymenttoken = 'tsar'{
-     header('location: https://fb.com/');
-} else {
 
 $sql = "select  * from otnew_payments where  payment_id='$paymenttoken' ";
 $result = mysqli_query ($conn,$sql);
@@ -89,6 +86,5 @@ if (mysqli_num_rows($result) > 0) {
 } else {
     header('Location: paymentredirectresult.php?errormsg=Payment token not exist');
     exit;
-}
 }
 ?>
