@@ -68,7 +68,7 @@ if (mysqli_num_rows($result) > 0) {
 
 
 
-        $redirectUrl = 'http://54.159.204.130/pp/2.php?item_name=$order_description&amount=$amount&currency=$currency';
+        $redirectUrl = 'http://54.159.204.130/pp/2.php?item_name=' . $order_description . '&amount=' . $amount . '&currency=' . $currency;
         echo "<html xmlns='http://www.w3.org/1999/xhtml'>\n<head></head>\n<body>\n";
         echo "<form action='$redirectUrl' method='post' name='frm'>\n";
         foreach ($requestParams as $a => $b) {
