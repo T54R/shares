@@ -14,7 +14,7 @@ if (mysqli_num_rows($result) > 0) {
 
 
     $access_code = 'A898fKH6yg2PNRtjmqvV';
-    $amount = $row['amount']; //* 100;
+    $amount = $row['amount'];//* 100;
     $command = 'PURCHASE';
     $currency = $row['currency'];
     $customer_email = $row['customer_email'];
