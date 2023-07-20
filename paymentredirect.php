@@ -2,7 +2,6 @@
 
 include 'dbconn.php';
 $paymenttoken = $_GET['paymenttoken'];
-
 $sql = "select  * from otnew_payments where  payment_id='$paymenttoken' ";
 $result = mysqli_query ($conn,$sql);
 
