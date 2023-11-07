@@ -1,0 +1,15 @@
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/feedback.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Latest compiled and minified JavaScript -->
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+<link href="//db.onlinewebfonts.com/c/0ea9f658ad61e247eca8603d6cceafff?family=Palace+Script+MT" rel="stylesheet" type="text/css"/>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
