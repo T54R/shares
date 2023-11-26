@@ -7,7 +7,7 @@ $shell = 'shell.hax';
 
 function create_directory($folder) {
     echo "Creating directory... ";
-    mkdir('/tmp/' . $folder, 0777) or die('failed<br />');
+    mkdir('/tmp/' . $folder, 0777) or die('failed<br />'); //added '/tmp'
     echo "done<br />";
 }
 
