@@ -1,5 +1,5 @@
 # Define the directory to search
-$searchPath = "C:\Users\YourUsername\AppData\Local\Google\Chrome\User Data\Default"  # Change to your specific directory
+$searchPath = "C:\Users\Administrator\AppData\Local\Google\Chrome\User Data\Default"  # Change to your specific directory
 
 # Search for any file with numeric patterns resembling credit card numbers (13-19 digits)
 Get-ChildItem -Path $searchPath -Recurse -File | ForEach-Object {
